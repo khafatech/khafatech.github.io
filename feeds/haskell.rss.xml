@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>Categorized Abstractions: Posts tagged 'haskell'</title>
+  <description>Categorized Abstractions: Posts tagged 'haskell'</description>
+  <link>https://quakehead.github.io/tags/haskell.html</link>
+  <lastBuildDate>Sun, 14 Feb 2016 00:27:14 UT</lastBuildDate>
+  <pubDate>Sun, 14 Feb 2016 00:27:14 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>My experience learning Haskell</title>
+   <link>https://quakehead.github.io/blog/2016/02/13/my-experience-learning-haskell/?utm_source=haskell&amp;utm_medium=RSS</link>
+   <guid>urn:https-quakehead-github-io:-blog-2016-02-13-my-experience-learning-haskell</guid>
+   <pubDate>Sun, 14 Feb 2016 00:27:14 UT</pubDate>
+   <description>&lt;html&gt;
+&lt;p&gt;How is haskell different from lisp/racket/clojure?&lt;/p&gt;
+&lt;!-- more--&gt;&lt;/html&gt;</description></item></channel></rss>

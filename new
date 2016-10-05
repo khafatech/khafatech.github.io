@@ -1,0 +1,3 @@
+#!/bin/bash
+
+raco frog --new "$1"

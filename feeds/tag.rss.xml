@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <rss version="2.0">
  <channel>
-  <title>Categorized Abstractions: Categorized Abstractions</title>
-  <description>Categorized Abstractions: Categorized Abstractions</description>
-  <link>https://quakehead.github.io/index.html</link>
+  <title>Categorized Abstractions: Posts tagged 'tag'</title>
+  <description>Categorized Abstractions: Posts tagged 'tag'</description>
+  <link>https://quakehead.github.io/tags/tag.html</link>
   <lastBuildDate>Wed, 01 May 2019 22:11:52 UT</lastBuildDate>
   <pubDate>Wed, 01 May 2019 22:11:52 UT</pubDate>
   <ttl>1800</ttl>
   <item>
    <title>Hello world</title>
-   <link>https://quakehead.github.io/blog/2019/05/01/hello-world/?utm_source=all&amp;utm_medium=RSS</link>
+   <link>https://quakehead.github.io/blog/2019/05/01/hello-world/?utm_source=tag&amp;utm_medium=RSS</link>
    <guid isPermaLink="false">urn:https-quakehead-github-io:-blog-2019-05-01-hello-world</guid>
    <pubDate>Wed, 01 May 2019 22:11:52 UT</pubDate>
    <author>nil</author>

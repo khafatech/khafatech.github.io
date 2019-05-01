@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Categorized Abstractions: Categorized Abstractions</title>
- <link rel="self" href="https://quakehead.github.io/feeds/all.atom.xml" />
- <link href="https://quakehead.github.io/index.html" />
- <id>urn:https-quakehead-github-io:-index-html</id>
+ <title type="text">Categorized Abstractions: Posts tagged 'tag'</title>
+ <link rel="self" href="https://quakehead.github.io/feeds/tag.atom.xml" />
+ <link href="https://quakehead.github.io/tags/tag.html" />
+ <id>urn:https-quakehead-github-io:-tags-tag-html</id>
  <updated>2019-05-01T22:11:52Z</updated>
  <entry>
   <title type="text">Hello world</title>
-  <link rel="alternate" href="https://quakehead.github.io/blog/2019/05/01/hello-world/?utm_source=all&amp;utm_medium=Atom" />
+  <link rel="alternate" href="https://quakehead.github.io/blog/2019/05/01/hello-world/?utm_source=tag&amp;utm_medium=Atom" />
   <id>urn:https-quakehead-github-io:-blog-2019-05-01-hello-world</id>
   <published>2019-05-01T22:11:52Z</published>
   <updated>2019-05-01T22:11:52Z</updated>

@@ -1,6 +1,6 @@
     Title: On simulation
     Date: 2016-02-13T19:19:22
-    Tags: simulation, virtualization
+    Tags: DRAFT, simulation, virtualization
 
 *This is mostly a draft to test this blog generator*
 

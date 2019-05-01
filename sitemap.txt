@@ -1,4 +1,3 @@
-https://quakehead.github.io/blog/2016/02/13/my-experience-learning-haskell/
-https://quakehead.github.io/blog/2016/02/13/on-simulation/
+https://quakehead.github.io/blog/2019/05/01/hello-world/
 https://quakehead.github.io/posts/new.html
 https://quakehead.github.io/About.html

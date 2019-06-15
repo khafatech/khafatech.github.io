@@ -1,5 +1,5 @@
-# About page
+# About
 
-Your about page, here.
+This is a blog by [Mustafa Khafateh](https://khafateh.com).
 
-## Really?
+I plan to write about the intersection of programming languages, generative art, and sarcasm.

@@ -4,7 +4,7 @@
 ;; in frog/params.
 (define/contract (init)
   (-> any)
-  (current-scheme/host "https://quakehead.github.io")
+  (current-scheme/host "https://blog.khafateh.com")
   (current-uri-prefix "/")
   (current-title "Categorized Abstractions")
   (current-author "nil")

@@ -24,7 +24,7 @@ Besides the ambiguity of calling a language _functional_. (Is Javascript functio
 
 A couple of differences from the classic functional languages:
 
-- A superficial difference: Haskell doesn't isn't littered with parenthesis or the _s-expression_ format
+- A superficial difference: Haskell isn't littered with parenthesis or the _s-expression_ format
 - Haskell is strongly and statically typed, with type inference. The Hinley-Milner type system is arguably one of the most advanced type systems in any language. A monad is a typeclass.
 - It's purely functional, meaning functions always return the same value, functions can't produce side effects, and variables are immutable. Some languages related to Haskell like SML, OCaml and F# achieve different degrees of these.
 

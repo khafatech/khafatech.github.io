@@ -1,5 +1,4 @@
-https://quakehead.github.io/blog/2019/02/18/an-old-idea/
-https://quakehead.github.io/blog/2019/05/01/hello-world/
-https://quakehead.github.io/blog/2016/02/13/my-experience-learning-haskell/
-https://quakehead.github.io/posts/new.html
-https://quakehead.github.io/About.html
+https://blog.khafateh.com/blog/2019/02/18/an-old-idea/
+https://blog.khafateh.com/blog/2019/05/01/hello-world/
+https://blog.khafateh.com/Pawjects.html
+https://blog.khafateh.com/About.html

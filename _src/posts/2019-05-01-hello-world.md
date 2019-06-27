@@ -5,4 +5,3 @@
 post content
 
 <!-- more -->
-

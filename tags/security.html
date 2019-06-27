@@ -9,7 +9,7 @@
     <meta name="keywords"    content="security">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="https://quakehead.github.io/tags/security.html">
+    <link rel="canonical" href="https://blog.khafateh.com/tags/security.html">
 
 
     <!-- CSS -->
@@ -53,10 +53,6 @@
 
 <li><a href="/tags/encryption.html">encryption</a></li>
 
-<li><a href="/tags/haskell.html">haskell</a></li>
-
-<li><a href="/tags/programming-languages.html">programming languages</a></li>
-
 <li><a href="/tags/security.html">security</a></li>
 
 <li><a href="/tags/tag.html">tag</a></li>
@@ -65,8 +61,10 @@
             <li>
               <a href="/About.html">About</a>
             </li> 
+            <!--
             <li><a href="/feeds/security.atom.xml">Atom</a></li>
             <li><a href="/feeds/security.rss.xml">RSS</a></li>
+            -->
           </ul>
         </div>
       </div>
@@ -92,34 +90,52 @@
 <time datetime="2019-02-18" pubdate="true">2019-02-18</time> :: <span class="tags"><a href="/tags/security.html">security</a>, <a href="/tags/encryption.html">encryption</a></span></p>
   </header>
 
+<p>Spoiler alert: I didn&rsquo;t find the password.</p>
+
+<p>Around 2002, I came across a tool that encrypts and decrypts files using the IDEA cipher. <a href="https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm">IDEA</a> was created in 1991 by James Massey Xuejia Lai, and it seems still relatively secure. It&rsquo;s still used in a recent version of opengpg.</p>
+
+<p>I had encrypted few zip files using this, in 2002 and 2003. (Nothing serious, just wanted to try out encrypting things.) However, I forgot the passwords.</p>
+
+<p>Looking at the implementation, it says it uses a maximum of 8 characters for a passphrase, which is about half of IDEA&rsquo;s 128-bit keylength (not counting non-ascii characters.)</p>
+
+<p>It was a tool for DOS in 16-bit mode.</p>
+
+<p>Given this limitation, is bruteforcing a password possible? If I used only lowercase letters for the password, the number of passwords to try would be <code>26^8 = 208,827,064,576</code>, or about 200 billion combinations. Alphanumeric combinations would be <code>(26*2 + 10)^8 = 218,340,105,584,896</code>, or about 218 trillion. Some simple math can lead us to an estimate of the time to go through the search space. It depends on the elements and elements/s.</p>
+
+<p>One challenge with finding the correct decryption password is there&rsquo;s no easy way of making sure we hae the correct password. The way this idea program worked was to only encrypt/decrypt fixed blocks, with no integrity checking. If we decrypt a file with the wrong password, it would output random data. So one way to find the correct password is to find a pattern in the output if we know what the output would contain. Since it was a zip file, a zip file has a known header in the first block (16 bytes).</p>
+
+<p>I modified the main file to read words from a wordlist, decrypt the first block, and test if it&rsquo;s a zip header. Instead of parallizing the solution in C, I wrote simple bash scripts to run it parallelly after splitting the wordlist into 4, the number of cores I have. I was able to process 700k passwords/s. I wasn&rsquo;t able to find the password using the wordlists I had. I suppose I need to investigate more techniques and maybe harness my GPU.</p>
+
+<p>Few more things come to my mind for future work:</p>
+
+<ul>
+ <li>Are there any other weaknesses in the implementation?</li>
+ <li>Could this be integrated into the &ldquo;John the Ripper&rdquo; password cracker?</li></ul>
+
+<h3 id="references">References</h3>
+
+<ul>
+ <li>
+  <p><a href="https://github.com/quakehead/idea">The IDEA code that compiles in a modern linux enviornment</a></p></li>
+ <li>
+  <p><a href="https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm">The IDEA algorithm</a></p></li></ul>
+
 </article>
 
         </div>
       </div>
       <footer>
         <hr />
-        <p><a href="https://twitter.com/racketlang"
-              class="twitter-follow-button"
-              data-show-count="false"
-              data-lang="en">
-             "Follow RacketLang"
-           </a>
-           <script type="text/javascript">
-             !function(d,s,id){
-                 var js,fjs=d.getElementsByTagName(s)[0];
-                 if(!d.getElementById(id)){
-                     js=d.createElement(s);
-                     js.id=id;
-                     js.src="//platform.twitter.com/widgets.js";
-                     fjs.parentNode.insertBefore(js,fjs);
-                 }
-             }(document,"script","twitter-wjs");
-           </script></p>
-        <p>Site generated
+        <p><p>Site generated
         by <a href="https://github.com/greghendershott/frog">Frog</a>,
         the <strong>fr</strong>ozen bl<strong>og</strong> tool.</p>
-        <p>Using <a href="http://twitter.github.com/bootstrap/index.html">Bootstrap</a>.</p>
-        <p><em>Your legal notice here</em>.</p>
+
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0"
+        src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/></a><br
+        />This blog is licensed under a <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+        Attribution-ShareAlike 4.0 International License</a>.
       </footer>
     </div>
     <!-- </body> JS -->

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Categorized Abstractions: Posts tagged 'haskell'</title>
- <link rel="self" href="https://blog.khafateh.com/feeds/haskell.atom.xml" />
- <link href="https://blog.khafateh.com/tags/haskell.html" />
- <id>urn:https-blog-khafateh-com:-tags-haskell-html</id>
+ <title type="text">Categorized Abstractions: Posts tagged 'functionalprogramming'</title>
+ <link rel="self" href="https://blog.khafateh.com/feeds/functionalprogramming.atom.xml" />
+ <link href="https://blog.khafateh.com/tags/functionalprogramming.html" />
+ <id>urn:https-blog-khafateh-com:-tags-functionalprogramming-html</id>
  <updated>2019-05-03T23:27:14Z</updated>
  <entry>
   <title type="text">My experience learning Haskell</title>
-  <link rel="alternate" href="https://blog.khafateh.com/blog/2019/05/03/my-experience-learning-haskell/?utm_source=haskell&amp;utm_medium=Atom" />
+  <link rel="alternate" href="https://blog.khafateh.com/blog/2019/05/03/my-experience-learning-haskell/?utm_source=functionalprogramming&amp;utm_medium=Atom" />
   <id>urn:https-blog-khafateh-com:-blog-2019-05-03-my-experience-learning-haskell</id>
   <published>2019-05-03T23:27:14Z</published>
   <updated>2019-05-03T23:27:14Z</updated>

@@ -4,7 +4,74 @@
  <link rel="self" href="https://blog.khafateh.com/feeds/all.atom.xml" />
  <link href="https://blog.khafateh.com/index.html" />
  <id>urn:https-blog-khafateh-com:-index-html</id>
- <updated>2019-05-01T22:11:52Z</updated>
+ <updated>2019-05-03T23:27:14Z</updated>
+ <entry>
+  <title type="text">My experience learning Haskell</title>
+  <link rel="alternate" href="https://blog.khafateh.com/blog/2019/05/03/my-experience-learning-haskell/?utm_source=all&amp;utm_medium=Atom" />
+  <id>urn:https-blog-khafateh-com:-blog-2019-05-03-my-experience-learning-haskell</id>
+  <published>2019-05-03T23:27:14Z</published>
+  <updated>2019-05-03T23:27:14Z</updated>
+  <author>
+   <name>nil</name></author>
+  <content type="html">
+&lt;p&gt;tl;dr Haskell will help you in other languages even if you don&amp;rsquo;t use it.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve always been fascinated by the Haskell code I&amp;rsquo;ve seen &lt;strong&gt;[1]&lt;/strong&gt;, and I tried &lt;a href="http://learnyouahaskell.com"&gt;learning Haskell&lt;/a&gt; briefly in 2010 and when configuring Xmonad. In 2015, I started &lt;a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours"&gt;learning Haskell seriously&lt;/a&gt; by writing a significant piece of software, a Scheme interpreter, with the help of a tutorial. After few months in, I found that my style of programming in Python has improved somewhat. I discovered some patterns where functions returning functions greatly reduce duplication. In fact, functions returning functions are one type of the decorator syntax. Also, separating side-effect producing functions from pure functions was a good practice - it lead to less bugs and more testable code. More testable because of the lesser reliance on an external environment. Now with type hints in Python 3, one can also benefit from defining types and using algebraic data types &lt;a href="https://docs.python.org/3/library/typing.html#newtype"&gt;NewType&lt;/a&gt;. Python&amp;rsquo;s type hints are nowhere near as mature as Haskell&amp;rsquo;s type system though, and their optional nature in Python changes the experience of using them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;[1]&lt;/strong&gt; I should note that some of the very succinct and elegant examples are not accurate, such as the &lt;a href="https://www.cs.hmc.edu/~oneill/papers/Sieve-JFP.pdf"&gt;Sieve of Eratosthenes&lt;/a&gt; two-liner:&lt;/p&gt;
+
+&lt;div class="brush: Haskell"&gt;
+ &lt;table class="sourcetable"&gt;
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td class="linenos"&gt;
+     &lt;div class="linenodiv"&gt;
+      &lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;td class="code"&gt;
+     &lt;div class="source"&gt;
+      &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;primes&lt;/span&gt; &lt;span class="ow"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sieve&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;..&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nf"&gt;sieve&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="kt"&gt;:&lt;/span&gt; &lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="kt"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sieve&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="err"&gt;−&lt;/span&gt; &lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="p"&gt;`&lt;/span&gt;&lt;span class="n"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;`&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2 id="how-is-haskell-different-from-lispracketclojure"&gt;How is Haskell different from lisp/racket/clojure?&lt;/h2&gt;
+
+&lt;p&gt;Haskell belongs to family of functional languages that are statically typed with &lt;a href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system"&gt;Hindley–Milner type system&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Besides the ambiguity of calling a language &lt;em&gt;functional&lt;/em&gt;. (Is Javascript functional?)&lt;/p&gt;
+
+&lt;p&gt;A couple of differences from the classic functional languages:&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;A superficial difference: Haskell isn&amp;rsquo;t littered with parenthesis or the &lt;em&gt;s-expression&lt;/em&gt; format&lt;/li&gt;
+ &lt;li&gt;Haskell is strongly and statically typed, with type inference. The Hinley-Milner type system is arguably one of the most advanced type systems in any language. A monad is a typeclass.&lt;/li&gt;
+ &lt;li&gt;It&amp;rsquo;s purely functional, meaning functions always return the same value, functions can&amp;rsquo;t produce side effects, and variables are immutable. Some languages related to Haskell like SML, OCaml and F# achieve different degrees of these.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; b338feaa4ad3eebe43f972fa8966a948239fd22e&lt;/p&gt;
+
+&lt;h2 id="dont-fear-the-monad"&gt;Don&amp;rsquo;t fear the monad&lt;/h2&gt;
+
+&lt;p&gt;One major feature of Haskell is its monads. There&amp;rsquo;s a joke that once one understands the monad, you loose the ability to explain it to others.&lt;/p&gt;
+
+&lt;p&gt;It is based on &lt;a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html"&gt;relatively simple concepts&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;My view is that it&amp;rsquo;s a typeclass that can be used to chain function calls, and encapsulate other values. There&amp;rsquo;s also some syntactic sugar around monad chaining built into Haskell&amp;rsquo;s syntax, like the &lt;a href="https://en.wikibooks.org/wiki/Haskell/do_notation"&gt;&lt;code&gt;do&lt;/code&gt;&lt;/a&gt; notation and list comprehension.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a pretty big deal - it allows most parts of Haskell to remain purely functional while allowing things like IO. It does this by deferring the read/write actions to the runtime. It&amp;rsquo;s more subtle than this, but the idea is that Haskell code that manipulates &lt;em&gt;instructions to perform IO&lt;/em&gt; can be purely functional.&lt;/p&gt;
+
+&lt;h2 id="some-misconceptions-and-myths"&gt;Some misconceptions and myths&lt;/h2&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;&lt;strong&gt;There are no runtime errors&lt;/strong&gt;. Runtime errors are still possible. For example, the &lt;a href="https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:error"&gt;error&lt;/a&gt; function that can typematch to any function and simply exits.&lt;/p&gt;&lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;&lt;strong&gt;You need to be a genius with a Computer Science PhD to learn/use Haskell&lt;/strong&gt;. It&amp;rsquo;s not true. The core language is fairly simple. What&amp;rsquo;s hard about learning Haskell are all the habits and mental model of what a programming language is. Coming from a procedural or C-like language background, a lot of concepts would seem alien or weird. Haskell does come from an academic background, and it shows in a lot of the terminology, but since then it has escaped and seen uses all over the place. For instance, a Haskell music livecoding environment called &lt;a href="http://tidalcycles.org"&gt;TidalCycles&lt;/a&gt; is used by artists and musicians who don&amp;rsquo;t know programming, let alone Haskell. Still, it&amp;rsquo;s syntactically correct Haskell code executed in GHCi.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h2 id="references"&gt;References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://gamasutra.com/view/news/169296/Indepth_Functional_programming_in_C.php"&gt;In-depth: Functional programming in C++&lt;/a&gt; by John Carmack&lt;/p&gt;</content></entry>
  <entry>
   <title type="text">Hello world</title>
   <link rel="alternate" href="https://blog.khafateh.com/blog/2019/05/01/hello-world/?utm_source=all&amp;utm_medium=Atom" />

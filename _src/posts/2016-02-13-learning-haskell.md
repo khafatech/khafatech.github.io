@@ -1,6 +1,6 @@
     Title: My experience learning Haskell
     Date: 2019-05-03T19:27:14
-    Tags: haskell, functionalprogramming, DRAFT
+    Tags: haskell, functionalprogramming
 
 
 tl;dr Haskell will help you in other languages even if you don't use it.

@@ -6,7 +6,7 @@
     <title>Categorized Abstractions</title>
     <meta name="description" content="Categorized Abstractions">
     <meta name="author"      content="nil">
-    <meta name="keywords"    content="tag, encryption, all, security">
+    <meta name="keywords"    content="tag, encryption, all, haskell, security, functionalprogramming">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
     <link rel="canonical" href="https://blog.khafateh.com/index.html">
@@ -53,6 +53,10 @@
 
 <li><a href="/tags/encryption.html">encryption</a></li>
 
+<li><a href="/tags/functionalprogramming.html">functionalprogramming</a></li>
+
+<li><a href="/tags/haskell.html">haskell</a></li>
+
 <li><a href="/tags/security.html">security</a></li>
 
 <li><a href="/tags/tag.html">tag</a></li>
@@ -87,6 +91,73 @@
 
 
           <article>
+  <header>
+    <h2><a href='/blog/2019/05/03/my-experience-learning-haskell/'>My experience learning Haskell</a></h2>
+    <p class='date-and-tags'>
+<time datetime="2019-05-03" pubdate="true">2019-05-03</time> :: <span class="tags"><a href="/tags/haskell.html">haskell</a>, <a href="/tags/functionalprogramming.html">functionalprogramming</a></span></p>
+  </header>
+
+<p>tl;dr Haskell will help you in other languages even if you don&rsquo;t use it.</p>
+
+<p>I&rsquo;ve always been fascinated by the Haskell code I&rsquo;ve seen <strong>[1]</strong>, and I tried <a href="http://learnyouahaskell.com">learning Haskell</a> briefly in 2010 and when configuring Xmonad. In 2015, I started <a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">learning Haskell seriously</a> by writing a significant piece of software, a Scheme interpreter, with the help of a tutorial. After few months in, I found that my style of programming in Python has improved somewhat. I discovered some patterns where functions returning functions greatly reduce duplication. In fact, functions returning functions are one type of the decorator syntax. Also, separating side-effect producing functions from pure functions was a good practice - it lead to less bugs and more testable code. More testable because of the lesser reliance on an external environment. Now with type hints in Python 3, one can also benefit from defining types and using algebraic data types <a href="https://docs.python.org/3/library/typing.html#newtype">NewType</a>. Python&rsquo;s type hints are nowhere near as mature as Haskell&rsquo;s type system though, and their optional nature in Python changes the experience of using them.</p>
+
+<p><strong>[1]</strong> I should note that some of the very succinct and elegant examples are not accurate, such as the <a href="https://www.cs.hmc.edu/~oneill/papers/Sieve-JFP.pdf">Sieve of Eratosthenes</a> two-liner:</p>
+
+<div class="brush: Haskell">
+ <table class="sourcetable">
+  <tbody>
+   <tr>
+    <td class="linenos">
+     <div class="linenodiv">
+      <pre>1
+2</pre></div></td>
+    <td class="code">
+     <div class="source">
+      <pre><span></span><span class="nf">primes</span> <span class="ow">=</span> <span class="n">sieve</span> <span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]</span>
+<span class="nf">sieve</span> <span class="p">(</span><span class="n">p</span> <span class="kt">:</span> <span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">p</span> <span class="kt">:</span> <span class="n">sieve</span> <span class="p">[</span><span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span><span class="err">−</span> <span class="n">xs</span><span class="p">,</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</td></tr></tbody></table>
+</div>
+
+<h2 id="how-is-haskell-different-from-lispracketclojure">How is Haskell different from lisp/racket/clojure?</h2>
+
+<p>Haskell belongs to family of functional languages that are statically typed with <a href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system">Hindley–Milner type system</a>.</p>
+
+<p>Besides the ambiguity of calling a language <em>functional</em>. (Is Javascript functional?)</p>
+
+<p>A couple of differences from the classic functional languages:</p>
+
+<ul>
+ <li>A superficial difference: Haskell isn&rsquo;t littered with parenthesis or the <em>s-expression</em> format</li>
+ <li>Haskell is strongly and statically typed, with type inference. The Hinley-Milner type system is arguably one of the most advanced type systems in any language. A monad is a typeclass.</li>
+ <li>It&rsquo;s purely functional, meaning functions always return the same value, functions can&rsquo;t produce side effects, and variables are immutable. Some languages related to Haskell like SML, OCaml and F# achieve different degrees of these.</li></ul>
+
+<p>&gt;&gt;&gt;&gt;&gt;&gt; b338feaa4ad3eebe43f972fa8966a948239fd22e</p>
+
+<h2 id="dont-fear-the-monad">Don&rsquo;t fear the monad</h2>
+
+<p>One major feature of Haskell is its monads. There&rsquo;s a joke that once one understands the monad, you loose the ability to explain it to others.</p>
+
+<p>It is based on <a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html">relatively simple concepts</a>.</p>
+
+<p>My view is that it&rsquo;s a typeclass that can be used to chain function calls, and encapsulate other values. There&rsquo;s also some syntactic sugar around monad chaining built into Haskell&rsquo;s syntax, like the <a href="https://en.wikibooks.org/wiki/Haskell/do_notation"><code>do</code></a> notation and list comprehension.</p>
+
+<p>It&rsquo;s a pretty big deal - it allows most parts of Haskell to remain purely functional while allowing things like IO. It does this by deferring the read/write actions to the runtime. It&rsquo;s more subtle than this, but the idea is that Haskell code that manipulates <em>instructions to perform IO</em> can be purely functional.</p>
+
+<h2 id="some-misconceptions-and-myths">Some misconceptions and myths</h2>
+
+<ul>
+ <li>
+  <p><strong>There are no runtime errors</strong>. Runtime errors are still possible. For example, the <a href="https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:error">error</a> function that can typematch to any function and simply exits.</p></li>
+ <li>
+  <p><strong>You need to be a genius with a Computer Science PhD to learn/use Haskell</strong>. It&rsquo;s not true. The core language is fairly simple. What&rsquo;s hard about learning Haskell are all the habits and mental model of what a programming language is. Coming from a procedural or C-like language background, a lot of concepts would seem alien or weird. Haskell does come from an academic background, and it shows in a lot of the terminology, but since then it has escaped and seen uses all over the place. For instance, a Haskell music livecoding environment called <a href="http://tidalcycles.org">TidalCycles</a> is used by artists and musicians who don&rsquo;t know programming, let alone Haskell. Still, it&rsquo;s syntactically correct Haskell code executed in GHCi.</p></li></ul>
+
+<h2 id="references">References</h2>
+
+<p><a href="https://gamasutra.com/view/news/169296/Indepth_Functional_programming_in_C.php">In-depth: Functional programming in C++</a> by John Carmack</p>
+
+</article>
+<article>
   <header>
     <h2><a href='/blog/2019/05/01/hello-world/'>Hello world</a></h2>
     <p class='date-and-tags'>

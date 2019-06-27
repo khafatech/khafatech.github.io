@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?> 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Categorized Abstractions: Posts tagged 'haskell'</title>
- <link rel="self" href="https://blog.khafateh.com/feeds/haskell.atom.xml" />
- <link href="https://blog.khafateh.com/tags/haskell.html" />
- <id>urn:https-blog-khafateh-com:-tags-haskell-html</id>
- <updated>2019-05-03T23:27:14Z</updated>
- <entry>
-  <title type="text">My experience learning Haskell</title>
-  <link rel="alternate" href="https://blog.khafateh.com/blog/2019/05/03/my-experience-learning-haskell/?utm_source=haskell&amp;utm_medium=Atom" />
-  <id>urn:https-blog-khafateh-com:-blog-2019-05-03-my-experience-learning-haskell</id>
-  <published>2019-05-03T23:27:14Z</published>
-  <updated>2019-05-03T23:27:14Z</updated>
-  <author>
-   <name>nil</name></author>
-  <content type="html">
+<rss version="2.0">
+ <channel>
+  <title>Categorized Abstractions: Posts tagged 'functionalprogramming'</title>
+  <description>Categorized Abstractions: Posts tagged 'functionalprogramming'</description>
+  <link>https://blog.khafateh.com/tags/functionalprogramming.html</link>
+  <lastBuildDate>Fri, 03 May 2019 23:27:14 UT</lastBuildDate>
+  <pubDate>Fri, 03 May 2019 23:27:14 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>My experience learning Haskell</title>
+   <link>https://blog.khafateh.com/blog/2019/05/03/my-experience-learning-haskell/?utm_source=functionalprogramming&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-blog-khafateh-com:-blog-2019-05-03-my-experience-learning-haskell</guid>
+   <pubDate>Fri, 03 May 2019 23:27:14 UT</pubDate>
+   <author>nil</author>
+   <description>
 &lt;p&gt;tl;dr Haskell will help you in other languages even if you don&amp;rsquo;t use it.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve always been fascinated by the Haskell code I&amp;rsquo;ve seen &lt;strong&gt;[1]&lt;/strong&gt;, and I tried &lt;a href="http://learnyouahaskell.com"&gt;learning Haskell&lt;/a&gt; briefly in 2010 and when configuring Xmonad. In 2015, I started &lt;a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours"&gt;learning Haskell seriously&lt;/a&gt; by writing a significant piece of software, a Scheme interpreter, with the help of a tutorial. After few months in, I found that my style of programming in Python has improved somewhat. I discovered some patterns where functions returning functions greatly reduce duplication. In fact, functions returning functions are one type of the decorator syntax. Also, separating side-effect producing functions from pure functions was a good practice - it lead to less bugs and more testable code. More testable because of the lesser reliance on an external environment. Now with type hints in Python 3, one can also benefit from defining types and using algebraic data types &lt;a href="https://docs.python.org/3/library/typing.html#newtype"&gt;NewType&lt;/a&gt;. Python&amp;rsquo;s type hints are nowhere near as mature as Haskell&amp;rsquo;s type system though, and their optional nature in Python changes the experience of using them.&lt;/p&gt;
@@ -71,4 +71,4 @@
 
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href="https://gamasutra.com/view/news/169296/Indepth_Functional_programming_in_C.php"&gt;In-depth: Functional programming in C++&lt;/a&gt; by John Carmack&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;&lt;a href="https://gamasutra.com/view/news/169296/Indepth_Functional_programming_in_C.php"&gt;In-depth: Functional programming in C++&lt;/a&gt; by John Carmack&lt;/p&gt;</description></item></channel></rss>

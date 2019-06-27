@@ -15,4 +15,69 @@
    <author>nil</author>
    <description>
 &lt;p&gt;post content&lt;/p&gt;
+&lt;!-- more--&gt;</description></item>
+  <item>
+   <title>An old IDEA</title>
+   <link>https://quakehead.github.io/blog/2019/02/18/an-old-idea/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-quakehead-github-io:-blog-2019-02-18-an-old-idea</guid>
+   <pubDate>Mon, 18 Feb 2019 22:33:20 UT</pubDate>
+   <author>nil</author>
+   <description>
+&lt;p&gt;Around 2002, I came across a tool that encrypts and decrypts files using the IDEA cipher. &lt;a href="https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm"&gt;IDEA&lt;/a&gt; was created in 1991 by James Massey Xuejia Lai, and it seems still relatively secure. It&amp;rsquo;s still used in a recent version of opengpg.&lt;/p&gt;
+
+&lt;p&gt;I had encrypted few zip files using this, in 2002 and 2003. (Nothing seriuos, just wanted to try out encrypting things.) However, I forgot the passwords.&lt;/p&gt;
+
+&lt;p&gt;Looking at the implementation, it says it uses a maximum of 8 characters for a passphrase, which is about half of IDEA&amp;rsquo;s 128-bit keylength (not counting non-ascii characters.)&lt;/p&gt;
+
+&lt;p&gt;It was a tool for DOS in 16-bit mode.&lt;/p&gt;
+
+&lt;p&gt;So given this limitation, is bruteforcing a password possible? If I used only lowercase letters for the password, the number of passwords to try would be &lt;code&gt;26^8 = 208,827,064,576&lt;/code&gt;, or about 200 billion combinations. Alphanumeric combinations would be &lt;code&gt;(26*2 + 10)^8 = 218,340,105,584,896&lt;/code&gt;, or about 218 trillion.&lt;/p&gt;
+
+&lt;p&gt;Few things come to my mind:&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;Are there any other weaknesses in the implementation?&lt;/li&gt;
+ &lt;li&gt;thing2&lt;/li&gt;
+ &lt;li&gt;thing3&lt;/li&gt;&lt;/ul&gt;</description></item>
+  <item>
+   <title>My experience learning Haskell</title>
+   <link>https://quakehead.github.io/blog/2016/02/13/my-experience-learning-haskell/?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-quakehead-github-io:-blog-2016-02-13-my-experience-learning-haskell</guid>
+   <pubDate>Sun, 14 Feb 2016 00:27:14 UT</pubDate>
+   <author>nil</author>
+   <description>
+&lt;p&gt;tl;dr Haskell will help you in other languages even if you don&amp;rsquo;t use it.&lt;/p&gt;
+
+&lt;p&gt;That has been said about Lisp [put reference], but I think this applies even more so to Haskell, since it&amp;rsquo;s so different than mainstream languages. Below the oddly familiar syntax is a completely different model of execution than what we are used to, coming from procedural languages. Most of the unique features of Lisp are now common in dynamic programming languages (anonymous functions, garbage collection, introspection, etc.) Except perhaps, macros. Though that can be emulated to some degree with hackish usages of Eval, and Ruby also has good support for designing DSLs (Domain Specific Languages.)cheme. It can be argued that Python is a form of lisp [link to norvig&amp;rsquo;s].&lt;/p&gt;
+
+&lt;p&gt;After few months in, I found that my style of programming in Python has improved somewhat. I discovered some patterns where functions returning functions greatly reduce duplication. Also, separating side-effect producing functions from pure functions was a good practice - it lead to less bugs and more testable code. More testable because of the lesser reliance on an external environment. Now with type hints in Python 3, one can also benefit from defining types and using algebriac data types (using the &lt;a href="https://docs.python.org/3/library/typing.html#newtype"&gt;NewType&lt;/a&gt; function.)&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been fascinated by the Haskell code I&amp;rsquo;ve seen, mainly because of its elegance. In 2015, I started learning Haskell seriously. I&amp;rsquo;ve been interested in functional languages since college, where I learned scheme and Racket. For some reason, I wasn&amp;rsquo;t thrown off by the parenthisis, and that &amp;ldquo;nobody gets a job writing scheme.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;I should note, however, that some of the very succint and elegant examples are actually wrong. [put Seive link]&lt;/p&gt;
+
+&lt;p&gt;I spent about 3 months learning Haskell, learning completely new concepts and terminology, reading the source code and various documentation. I didn&amp;rsquo;t expect to do anything productive in it. It&amp;rsquo;s well-known that it&amp;rsquo;s &amp;ldquo;hard&amp;rdquo; to do useful things in haskell, mainly because of its strict purity requirements.&lt;/p&gt;
+
+&lt;h2 id="how-is-haskell-different-from-lispracketclojure"&gt;How is haskell different from lisp/racket/clojure?&lt;/h2&gt;
+
+&lt;p&gt;Haskell, on the other hand, bel family of functional languages - statically typed ones with Hinley-Milner type inference.&lt;/p&gt;
+
+&lt;p&gt;Besides the ambiguity of calling a language &lt;em&gt;functional&lt;/em&gt;. (Is Javascript functional?)&lt;/p&gt;
+
+&lt;p&gt;A couple of differences from the classic functional languages:&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;A superficial difference: Haskell doesn&amp;rsquo;t isn&amp;rsquo;t littered with parenthesis or the &lt;em&gt;s-expression&lt;/em&gt; format&lt;/li&gt;
+ &lt;li&gt;Haskell is strongly and statically typed, with type inference. The hindly milner type system is arguably one of the most advanced type systems in any language. A monad is simpl&lt;/li&gt;
+ &lt;li&gt;It&amp;rsquo;s purely functional, meaning functions always return the same value, and variables can&amp;rsquo;t change. Some languages related to haskell like SML, OCaml and F# go away with this feature.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;A quick glance at wikipedia shows that&lt;/p&gt;
+
+&lt;h2 id="dont-fear-the-monad"&gt;Don&amp;rsquo;t fear the monad&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s a joke that once one understands the monad, you loose the ability to explain it to others.&lt;/p&gt;
+
+&lt;p&gt;My view is that it&amp;rsquo;s a typeclass that can be used to chain function calls and pass a &lt;strong&gt;thing&lt;/strong&gt; around. There&amp;rsquo;s also some syntactic sugar around monad chaining.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a pretty big deal - One usage allows to have the benefits of non-side-effecting code and also modifying the environment somehow (doing io with the IO monad.)&lt;/p&gt;
 &lt;!-- more--&gt;</description></item></channel></rss>

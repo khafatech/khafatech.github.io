@@ -1,49 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
- <title type="text">Categorized Abstractions: Categorized Abstractions</title>
- <link rel="self" href="https://quakehead.github.io/feeds/all.atom.xml" />
- <link href="https://quakehead.github.io/index.html" />
- <id>urn:https-quakehead-github-io:-index-html</id>
- <updated>2019-05-01T22:11:52Z</updated>
- <entry>
-  <title type="text">Hello world</title>
-  <link rel="alternate" href="https://quakehead.github.io/blog/2019/05/01/hello-world/?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:https-quakehead-github-io:-blog-2019-05-01-hello-world</id>
-  <published>2019-05-01T22:11:52Z</published>
-  <updated>2019-05-01T22:11:52Z</updated>
-  <author>
-   <name>nil</name></author>
-  <content type="html">
-&lt;p&gt;post content&lt;/p&gt;
-&lt;!-- more--&gt;</content></entry>
- <entry>
-  <title type="text">An old IDEA</title>
-  <link rel="alternate" href="https://quakehead.github.io/blog/2019/02/18/an-old-idea/?utm_source=all&amp;utm_medium=Atom" />
-  <id>urn:https-quakehead-github-io:-blog-2019-02-18-an-old-idea</id>
-  <published>2019-02-18T22:33:20Z</published>
-  <updated>2019-02-18T22:33:20Z</updated>
-  <author>
-   <name>nil</name></author>
-  <content type="html">
-&lt;p&gt;Around 2002, I came across a tool that encrypts and decrypts files using the IDEA cipher. &lt;a href="https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm"&gt;IDEA&lt;/a&gt; was created in 1991 by James Massey Xuejia Lai, and it seems still relatively secure. It&amp;rsquo;s still used in a recent version of opengpg.&lt;/p&gt;
-
-&lt;p&gt;I had encrypted few zip files using this, in 2002 and 2003. (Nothing seriuos, just wanted to try out encrypting things.) However, I forgot the passwords.&lt;/p&gt;
-
-&lt;p&gt;Looking at the implementation, it says it uses a maximum of 8 characters for a passphrase, which is about half of IDEA&amp;rsquo;s 128-bit keylength (not counting non-ascii characters.)&lt;/p&gt;
-
-&lt;p&gt;It was a tool for DOS in 16-bit mode.&lt;/p&gt;
-
-&lt;p&gt;So given this limitation, is bruteforcing a password possible? If I used only lowercase letters for the password, the number of passwords to try would be &lt;code&gt;26^8 = 208,827,064,576&lt;/code&gt;, or about 200 billion combinations. Alphanumeric combinations would be &lt;code&gt;(26*2 + 10)^8 = 218,340,105,584,896&lt;/code&gt;, or about 218 trillion.&lt;/p&gt;
-
-&lt;p&gt;Few things come to my mind:&lt;/p&gt;
-
-&lt;ul&gt;
- &lt;li&gt;Are there any other weaknesses in the implementation?&lt;/li&gt;
- &lt;li&gt;thing2&lt;/li&gt;
- &lt;li&gt;thing3&lt;/li&gt;&lt;/ul&gt;</content></entry>
+ <title type="text">Categorized Abstractions: Posts tagged 'haskell'</title>
+ <link rel="self" href="https://quakehead.github.io/feeds/haskell.atom.xml" />
+ <link href="https://quakehead.github.io/tags/haskell.html" />
+ <id>urn:https-quakehead-github-io:-tags-haskell-html</id>
+ <updated>2016-02-14T00:27:14Z</updated>
  <entry>
   <title type="text">My experience learning Haskell</title>
-  <link rel="alternate" href="https://quakehead.github.io/blog/2016/02/13/my-experience-learning-haskell/?utm_source=all&amp;utm_medium=Atom" />
+  <link rel="alternate" href="https://quakehead.github.io/blog/2016/02/13/my-experience-learning-haskell/?utm_source=haskell&amp;utm_medium=Atom" />
   <id>urn:https-quakehead-github-io:-blog-2016-02-13-my-experience-learning-haskell</id>
   <published>2016-02-14T00:27:14Z</published>
   <updated>2016-02-14T00:27:14Z</updated>

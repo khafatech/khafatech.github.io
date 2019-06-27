@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>Categorized Abstractions: Posts tagged 'security'</title>
+  <description>Categorized Abstractions: Posts tagged 'security'</description>
+  <link>https://quakehead.github.io/tags/security.html</link>
+  <lastBuildDate>Mon, 18 Feb 2019 22:33:20 UT</lastBuildDate>
+  <pubDate>Mon, 18 Feb 2019 22:33:20 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>An old IDEA</title>
+   <link>https://quakehead.github.io/blog/2019/02/18/an-old-idea/?utm_source=security&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-quakehead-github-io:-blog-2019-02-18-an-old-idea</guid>
+   <pubDate>Mon, 18 Feb 2019 22:33:20 UT</pubDate>
+   <author>nil</author>
+   <description>
+&lt;p&gt;Around 2002, I came across a tool that encrypts and decrypts files using the IDEA cipher. &lt;a href="https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm"&gt;IDEA&lt;/a&gt; was created in 1991 by James Massey Xuejia Lai, and it seems still relatively secure. It&amp;rsquo;s still used in a recent version of opengpg.&lt;/p&gt;
+
+&lt;p&gt;I had encrypted few zip files using this, in 2002 and 2003. (Nothing seriuos, just wanted to try out encrypting things.) However, I forgot the passwords.&lt;/p&gt;
+
+&lt;p&gt;Looking at the implementation, it says it uses a maximum of 8 characters for a passphrase, which is about half of IDEA&amp;rsquo;s 128-bit keylength (not counting non-ascii characters.)&lt;/p&gt;
+
+&lt;p&gt;It was a tool for DOS in 16-bit mode.&lt;/p&gt;
+
+&lt;p&gt;So given this limitation, is bruteforcing a password possible? If I used only lowercase letters for the password, the number of passwords to try would be &lt;code&gt;26^8 = 208,827,064,576&lt;/code&gt;, or about 200 billion combinations. Alphanumeric combinations would be &lt;code&gt;(26*2 + 10)^8 = 218,340,105,584,896&lt;/code&gt;, or about 218 trillion.&lt;/p&gt;
+
+&lt;p&gt;Few things come to my mind:&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;Are there any other weaknesses in the implementation?&lt;/li&gt;
+ &lt;li&gt;thing2&lt;/li&gt;
+ &lt;li&gt;thing3&lt;/li&gt;&lt;/ul&gt;</description></item></channel></rss>

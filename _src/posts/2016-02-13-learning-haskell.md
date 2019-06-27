@@ -1,11 +1,11 @@
     Title: My experience learning Haskell
     Date: 2016-02-13T19:27:14
-    Tags: DRAFT, haskell
+    Tags: haskell, programming languages
 
 
 tl;dr Haskell will help you in other languages even if you don't use it.
 
-That has been said about Lisp [put referce], but I think this applies even more so to Haskell, since it's so different than mainstream languages. Below the oddly familiar syntax is a completely different model of execution than what we are used to, coming from procedural langauges. Most of the unique features of Lisp are now common in dynamic programming langauges (anonymous functions, garbage collection, introspection, etc.) Except perhaps, macros. Though that can be emulated to some degree with hackish usages of Eval, and Ruby also has good support for designing DSLs (Domain Specific Languages.)cheme. It can be argued that Python is a form of lisp [link to norvig's].
+That has been said about Lisp [put reference], but I think this applies even more so to Haskell, since it's so different than mainstream languages. Below the oddly familiar syntax is a completely different model of execution than what we are used to, coming from procedural languages. Most of the unique features of Lisp are now common in dynamic programming languages (anonymous functions, garbage collection, introspection, etc.) Except perhaps, macros. Though that can be emulated to some degree with hackish usages of Eval, and Ruby also has good support for designing DSLs (Domain Specific Languages.)cheme. It can be argued that Python is a form of lisp [link to norvig's].
 
 After few months in, I found that my style of programming in Python has improved somewhat. I discovered some patterns where functions returning functions greatly reduce duplication. Also, separating side-effect producing functions from pure functions was a good practice - it lead to less bugs and more testable code. More testable because of the lesser reliance on an external environment.  Now with type hints in Python 3, one can also benefit from defining types and using algebriac data types (using the [NewType](https://docs.python.org/3/library/typing.html#newtype) function.)
 
@@ -32,7 +32,7 @@ A couple of differences from the classic functional languages:
 - Haskell is strongly and statically typed, with type inference. The hindly milner type system is arguably one of the most advanced type systems in any language. A monad is simpl
 - It's purely functional, meaning functions always return the same value, and variables can't change. Some languages related to haskell like SML, OCaml and F# go away with this feature.
 
-A quick glance at wikipedia shows that 
+A quick glance at wikipedia shows that
 
 
 

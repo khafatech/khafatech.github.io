@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Categorized Abstractions</title>
-    <meta name="description" content="Categorized Abstractions">
+    <title>An old IDEA</title>
+    <meta name="description" content="Around 2002, I came across a tool that encrypts and decrypts files using the IDEA cipher. IDEA was created in 1991 by James Massey Xuejia Lai, and it seems still relatively secure. It's still used in a recent version of opengpg.  I had encrypted few zip f...">
     <meta name="author"      content="nil">
-    <meta name="keywords"    content="tag, encryption, all, haskell, security, programming languages">
+    <meta name="keywords"    content="security, encryption">
     <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <link rel="icon"      href="/favicon.ico">
-    <link rel="canonical" href="https://quakehead.github.io/index.html">
-
-
+    <link rel="canonical" href="https://quakehead.github.io/blog/2019/02/18/an-old-idea/">
+    <link rel="next" href="/blog/2016/02/13/my-experience-learning-haskell/">
+    <link rel="prev" href="/blog/2019/05/01/hello-world/">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/pygments.css">
@@ -77,8 +77,7 @@
         <!-- Main column -->
         <div id="content" class="col-md-12">
 
-          <h1>Welcome</h1>
-          <p>(edited) Here is some text that only goes on the home page 
+
 
 
 
@@ -88,30 +87,71 @@
 
           <article>
   <header>
-    <h2><a href='/blog/2019/05/01/hello-world/'>Hello world</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2019-05-01" pubdate="true">2019-05-01</time> :: <span class="tags"><a href="/tags/tag.html">tag</a></span></p>
-  </header>
-  <footer>
-    <a href='/blog/2019/05/01/hello-world/'>&hellip; more &hellip;</a>
-  </footer>
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2019/02/18/an-old-idea/'>An old IDEA</a></h2>
+    <h1>An old IDEA</h1>
     <p class='date-and-tags'>
 <time datetime="2019-02-18" pubdate="true">2019-02-18</time> :: <span class="tags"><a href="/tags/security.html">security</a>, <a href="/tags/encryption.html">encryption</a></span></p>
   </header>
 
-</article>
-<article>
-  <header>
-    <h2><a href='/blog/2016/02/13/my-experience-learning-haskell/'>My experience learning Haskell</a></h2>
-    <p class='date-and-tags'>
-<time datetime="2016-02-13" pubdate="true">2016-02-13</time> :: <span class="tags"><a href="/tags/haskell.html">haskell</a>, <a href="/tags/programming-languages.html">programming languages</a></span></p>
-  </header>
+<p>Around 2002, I came across a tool that encrypts and decrypts files using the IDEA cipher. <a href="https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm">IDEA</a> was created in 1991 by James Massey Xuejia Lai, and it seems still relatively secure. It&rsquo;s still used in a recent version of opengpg.</p>
+
+<p>I had encrypted few zip files using this, in 2002 and 2003. (Nothing seriuos, just wanted to try out encrypting things.) However, I forgot the passwords.</p>
+
+<p>Looking at the implementation, it says it uses a maximum of 8 characters for a passphrase, which is about half of IDEA&rsquo;s 128-bit keylength (not counting non-ascii characters.)</p>
+
+<p>It was a tool for DOS in 16-bit mode.</p>
+
+<p>So given this limitation, is bruteforcing a password possible? If I used only lowercase letters for the password, the number of passwords to try would be <code>26^8 = 208,827,064,576</code>, or about 200 billion combinations. Alphanumeric combinations would be <code>(26*2 + 10)^8 = 218,340,105,584,896</code>, or about 218 trillion.</p>
+
+<p>Few things come to my mind:</p>
+
+<ul>
+ <li>Are there any other weaknesses in the implementation?</li>
+ <li>thing2</li>
+ <li>thing3</li></ul>
   <footer>
-    <a href='/blog/2016/02/13/my-experience-learning-haskell/'>&hellip; more &hellip;</a>
+    <script type="text/javascript">
+      !function(d,s,id){
+          var js,fjs=d.getElementsByTagName(s)[0];
+          if(!d.getElementById(id)){
+              js=d.createElement(s);
+              js.id=id;
+              js.src="//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+          }
+      }(document,"script","twitter-wjs");
+    </script>
+    <a href="https://twitter.com/share"
+       class="twitter-share-button"
+       data-url="https://quakehead.github.io/blog/2019/02/18/an-old-idea/"
+       data-dnt="true">
+      "Tweet"</a>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <g:plusone size="medium" href="https://quakehead.github.io/blog/2019/02/18/an-old-idea/"></g:plusone>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.identifier = undefined;
+        this.page.url = undefined;
+        this.page.title = undefined;
+        this.page.category_id = undefined;
+      };
+      var disqus_shortname = 'shortname';
+      (function() {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.head || document.body).appendChild(dsq);
+      })();
+    </script>
+    <ul class="pager">
+    <li class="previous">
+      <a href="/blog/2019/05/01/hello-world/">&larr; <em>Hello world</em></a>
+    </li>
+    <li class="next">
+      <a href="/blog/2016/02/13/my-experience-learning-haskell/"><em>My experience learning Haskell</em> &rarr;</a>
+    </li>
+    </ul>
   </footer>
 </article>
 
